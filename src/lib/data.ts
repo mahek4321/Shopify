@@ -398,10 +398,10 @@ export const products: Product[] = [
 ];
 
 export const collections = [
-  { id: "serums", name: "Serums", description: "Targeted active treatments", count: 4, gradient: "from-[#1A0A2E] via-[#2D1854] to-[#C97B3A]", icon: "💧" },
-  { id: "moisturisers", name: "Moisturisers", description: "Deep hydration formulas", count: 3, gradient: "from-[#2D1854] via-[#4A1F7A] to-[#C97B3A]", icon: "🫧" },
-  { id: "treatments", name: "Treatments", description: "Exfoliate and purify", count: 3, gradient: "from-[#4A1F7A] via-[#2D1854] to-[#1A0A2E]", icon: "✨" },
-  { id: "gift-sets", name: "Gift Sets", description: "Curated luxury collections", count: 2, gradient: "from-[#C97B3A] via-[#4A1F7A] to-[#1A0A2E]", icon: "🎁" },
+  { id: "serums",       name: "Serums",       description: "Targeted active treatments",  count: 4, heroGradient: "from-[#1A0A2E] via-[#2D1854] to-[#C97B3A]", cardGradient: "from-[#1A0A2E] via-[#2D1854] to-[#C97B3A]", icon: "💧" },
+  { id: "moisturisers", name: "Moisturisers", description: "Deep hydration formulas",     count: 3, heroGradient: "from-[#2D1854] via-[#4A1F7A] to-[#C97B3A]", cardGradient: "from-[#2D1854] via-[#4A1F7A] to-[#C97B3A]", icon: "🫧" },
+  { id: "treatments",   name: "Treatments",   description: "Exfoliate and purify",        count: 3, heroGradient: "from-[#1A0A2E] via-[#2D1854] to-[#4A1F7A]", cardGradient: "from-[#1A0A2E] via-[#2D1854] to-[#4A1F7A]", icon: "✨" },
+  { id: "gift-sets",    name: "Gift Sets",    description: "Curated luxury collections",  count: 2, heroGradient: "from-[#1A0A2E] via-[#4A1F7A] to-[#C97B3A]", cardGradient: "from-[#1A0A2E] via-[#4A1F7A] to-[#C97B3A]", icon: "🎁" },
 ];
 
 export const faqs = [

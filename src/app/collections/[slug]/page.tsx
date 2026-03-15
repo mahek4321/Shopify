@@ -40,28 +40,40 @@ export default function CollectionPage({ params }: { params: { slug: string } })
     : collection!.description;
   const gradient = isAll
     ? "from-[#1A0A2E] via-[#2D1854] to-[#4A1F7A]"
-    : collection!.gradient;
+    : collection!.heroGradient;
 
   return (
     <div className="bg-ivory pb-20">
       {/* Hero */}
-      <section className={`bg-gradient-to-br ${gradient} py-20 text-ivory`}>
-        <div className="mx-auto max-w-4xl px-6">
+      <section className={`relative bg-gradient-to-br ${gradient} py-20`}>
+        {/* Mandatory dark overlay — ensures text always visible */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,4,20,0.55) 0%, rgba(10,4,20,0.35) 60%, rgba(10,4,20,0.55) 100%)" }} />
+        <div className="relative z-10 mx-auto max-w-4xl px-6">
           {/* Breadcrumb */}
-          <nav className="mb-6 flex items-center gap-2 text-xs text-white/60">
-            <Link href="/" className="hover:text-white">Home</Link>
-            <span>/</span>
-            <Link href="/collections/all" className="hover:text-white">Collections</Link>
+          <nav className="mb-6 flex items-center gap-2 text-xs" style={{ color: "rgba(240,213,160,0.7)" }}>
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span style={{ color: "rgba(240,213,160,0.5)" }}>/</span>
+            <Link href="/collections/all" className="hover:text-white transition-colors">Collections</Link>
             {!isAll && (
               <>
-                <span>/</span>
-                <span className="text-white">{title}</span>
+                <span style={{ color: "rgba(240,213,160,0.5)" }}>/</span>
+                <span style={{ color: "#F0D5A0" }}>{title}</span>
               </>
             )}
           </nav>
-          <h1 className="font-heading text-[40px] md:text-[56px]">{title}</h1>
-          <p className="mt-3 text-sm text-white/80 md:text-[15px]">{description}</p>
-          <span className="mt-4 inline-block rounded-full border border-white/30 px-4 py-1 text-xs text-white/80">
+          <h1
+            className="font-heading text-[40px] md:text-[56px]"
+            style={{ color: "#FFFFFF", textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
+          >
+            {title}
+          </h1>
+          <p className="mt-3 text-sm md:text-[15px]" style={{ color: "rgba(248,243,238,0.85)", textShadow: "0 1px 10px rgba(0,0,0,0.4)" }}>
+            {description}
+          </p>
+          <span
+            className="mt-4 inline-block rounded-full px-4 py-1 text-xs"
+            style={{ border: "1px solid rgba(240,213,160,0.5)", color: "#F0D5A0", background: "rgba(10,4,20,0.3)" }}
+          >
             {filtered.length} product{filtered.length !== 1 ? "s" : ""}
           </span>
         </div>

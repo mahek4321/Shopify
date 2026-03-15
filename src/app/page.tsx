@@ -88,7 +88,7 @@ export default function HomePage() {
                     <p className="mt-1 font-heading text-2xl text-gold">$89</p>
                   </div>
                   <button
-                    onClick={() => { const p = products.find(x => x.id === "glow-serum"); if (p) addItem(p); toast.success("Lumina Glow Serum added to bag ✓"); }}
+                    onClick={() => { const p = products.find(x => x.id === "glow-serum"); if (p) addItem({ ...p, variant: "30ml" }); toast.success("Lumina Glow Serum added to bag ✓"); }}
                     className="flex items-center gap-2 rounded-sm bg-gold px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white hover:bg-[#b36b30] transition"
                   >
                     Add to Bag <ArrowRight className="h-3.5 w-3.5" />
@@ -135,7 +135,7 @@ export default function HomePage() {
                 viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <Link href={`/collections/${col.id}`}>
-                  <div className={`relative h-72 overflow-hidden rounded-md bg-gradient-to-br ${col.gradient} transition hover:scale-[1.02] hover:shadow-soft`}>
+                  <div className={`relative h-72 overflow-hidden rounded-md bg-gradient-to-br ${col.cardGradient} transition hover:scale-[1.02] hover:shadow-soft`}>
                     <div className="absolute inset-0" style={{ background: "rgba(10,4,20,0.55)" }} />
                     <div className="relative flex h-full flex-col items-center justify-center text-center">
                       <span className="text-3xl">{col.icon}</span>
